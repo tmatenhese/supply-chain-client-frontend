@@ -1,0 +1,57 @@
+<h3>Create Products</h3>
+<div  style="width: 100%;">
+  <div [hidden]="submitted" style="width: 300px;"></div>
+    <form (ngSubmit)="onSubmit()">
+ 
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Product Id" id="id"  required [(ngModel)]="orgDao.id"
+              name="id">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control"  placeholder="Description" id="description" required [(ngModel)]="orgDao.description"
+                    name="description">                
+            </div>          
+          </div> 
+<p></p>
+
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Prize" id="prize"  required [(ngModel)]="orgDao.prize"
+              name="prize">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control"  placeholder="Variant" id="variant" required [(ngModel)]="orgDao.variant"
+                    name="variant">                
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Owner" id="owner" required [(ngModel)]="orgDao.owner" name="owner">
+              </div> 
+              
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Quantity" id="quantity" required [(ngModel)]="orgDao.quantity" name="quantity">
+              </div>                
+
+          </div> 
+
+          <p></p>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Product Status" id="status"  required [(ngModel)]="orgDao.status"
+              name="status">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control"  placeholder="Product Code" id="productCode" required [(ngModel)]="orgDao.productCode"
+                    name="productCode">                
+            </div>          
+          </div> 
+          
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+<div [hidden]="!submitted">
+	<h4>You submitted successfully!</h4>
+	<button class="btn btn-success" (click)="newOrganisation()">Add</button>
+</div>

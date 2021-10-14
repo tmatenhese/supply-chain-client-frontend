@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Product List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Variant</th>
+            <th>ProductCode</th>
+            <th>Prize</th>
+            <th>Status</th>
+            <th>Owner</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products | async">
+            <td>{{product.id}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.variant}}</td>
+            <td>{{product.productCode}}</td>
+            <td>{{product.prize}}</td>
+            <td>{{product.status}}</td>
+            <td>{{product.owner}}</td>
+            <td>{{product.quantity}}</td>
+            <td>
+                <button (click)="productDetails(product.id)" class="btn btn-info" style="margin-left: 10px">View Details</button>
+
+              <button (click)="updateDetails(product.id,product.owner)" class="btn btn-info" style="margin-left: 10px">Update Details</button>
+          </td>            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
